@@ -37,9 +37,11 @@ set, extract the files from the downloaded ISO image, unzip NSRLFile.txt.zip,
 create a PostgreSQL database and run the script to populate the database.
 
 `createdb hashes`
+
 `./make-psql-db.sh hashes`
 
 The script assumes there are files named nsrlmfg.txt, nsrlos.txt, nsrlprod.txt and nsrlfile.txt.
 
 From PostgreSQL, you can query things like:
+
 `SELECT * FROM file WHERE "SHA-1" = UPPER('0000002D9D62AEBE1E0E9DB6C4C4C7C16A163D2C');`
