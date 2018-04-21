@@ -28,3 +28,18 @@ Feed the tool with list of lines with SHA-1 hashes. The tool will remove all lin
 have known good hashes. The remaining files are the ones that might be interesting.
 
 `cat testhashes.txt | ./check.py NSRLFile.kct`
+
+# But I like SQL!
+
+If you want to put the whole data in PostgreSQL, there is also a script for that.
+You need to download the whole "Modern RDS (microcomputer applications from 2000 to present)"
+set, extract the files from the downloaded ISO image, unzip NSRLFile.txt.zip,
+create a PostgreSQL database and run the script to populate the database.
+
+`createdb hashes`
+`./make-psql-db.sh hashes`
+
+The script assumes there are files named nsrlmfg.txt, nsrlos.txt, nsrlprod.txt and nsrlfile.txt.
+
+From PostgreSQL, you can query things like:
+`SELECT * FROM file WHERE "SHA-1" = UPPER('0000002D9D62AEBE1E0E9DB6C4C4C7C16A163D2C');`
