@@ -10,7 +10,8 @@ for non-duplicate NIST hashes is >5GB.
 
 # Requirements
 
-pip install kyoto-cabinet
+- Make sure kyotocabinet is installed from your linux package repositories (e.g. on arch linux do ``pacman -S kyotocabinet``)
+- ``pip install kyotocabinet`` to generate the python bindings
 
 # Build the db
 
